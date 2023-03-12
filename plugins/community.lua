@@ -1,4 +1,6 @@
 return {
+  -- Add the community repository of plugin specifications
+  -- Available plugins can be found at https://github.com/AstroNvim/astrocommunity
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.colorscheme.nightfox", enabled = false },
