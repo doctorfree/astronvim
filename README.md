@@ -1,2 +1,3 @@
 # astronvim
-User configuration for AstroNvim
+
+User configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
