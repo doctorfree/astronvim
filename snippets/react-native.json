@@ -1,0 +1,54 @@
+{
+  "react native component template": {
+    "prefix": "rnc",
+    "body": [
+      "import { View } from 'react-native'",
+      "",
+      "export const ${1:$TM_FILENAME_BASE} = () => {",
+      "  return <View>${2}</View>",
+      "}"
+    ],
+    "description": "react native component template"
+  },
+  "react native component template export": {
+    "prefix": "rnce",
+    "body": [
+      "import { View } from 'react-native'",
+      "",
+      "const ${1:$TM_FILENAME_BASE} = () => {",
+      "  return <View>${2}</View>",
+      "}",
+      "",
+      "export default $1"
+    ],
+    "description": "react native component template export"
+  },
+  "typescript react native component template": {
+    "prefix": "tsrnc",
+    "body": [
+      "import { View } from 'react-native'",
+      "",
+      "interface Props {}",
+      "",
+      "export const ${1:$TM_FILENAME_BASE} = (props: Props) => {",
+      "  return <View>${2}</View>",
+      "}"
+    ],
+    "description": "typescript react native component template"
+  },
+  "typescript react native component template export": {
+    "prefix": "tsrnce",
+    "body": [
+      "import { View } from 'react-native'",
+      "",
+      "interface Props {}",
+      "",
+      "const ${1:$TM_FILENAME_BASE} = (props: Props) => {",
+      "  return <View>${2}</View>",
+      "}",
+      "",
+      "export default $1"
+    ],
+    "description": "react native component template export"
+  }
+}

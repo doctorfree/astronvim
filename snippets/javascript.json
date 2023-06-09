@@ -1,0 +1,12 @@
+{
+  "console.log": {
+    "prefix": ["clg"],
+    "body": ["console.log($1)"],
+    "description": "console.log"
+  },
+  "try/catch": {
+    "prefix": "trc",
+    "body": ["try {", "  $1", "} catch (error) {", "  $2", "}"],
+    "description": "try/catch"
+  }
+}
