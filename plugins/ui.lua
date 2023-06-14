@@ -4,7 +4,7 @@ return {
     dependencies = "nvim-tree/nvim-web-devicons",
     keys = {
       { "<leader>ut", "<cmd>TroubleToggle workspace_diagnostics<CR>", desc = "Toggle trouble" },
-      { "<leader>fd", "<cmd>TroubleToggle document_diagnostics<CR>",  desc = "Toggle trouble for document" },
+      { "<leader>fd", "<cmd>TroubleToggle document_diagnostics<CR>", desc = "Toggle trouble for document" },
     },
   },
   {
@@ -16,14 +16,12 @@ return {
   {
     "j-hui/fidget.nvim",
     lazy = false,
-    config = function()
-      require("fidget").setup({})
-    end
+    config = function() require("fidget").setup {} end,
   },
   {
     "anuvyklack/fold-preview.nvim",
     lazy = false,
-    dependencies = 'anuvyklack/keymap-amend.nvim',
+    dependencies = "anuvyklack/keymap-amend.nvim",
     opts = {},
   },
   {
@@ -35,7 +33,12 @@ return {
   {
     "cshuaimin/ssr.nvim",
     keys = {
-      { "<leader>sr", function() require("ssr").open() end, desc = "Structural search and replace", mode = { "n", "x" } },
+      {
+        "<leader>sr",
+        function() require("ssr").open() end,
+        desc = "Structural search and replace",
+        mode = { "n", "x" },
+      },
     },
     opts = {},
   },
@@ -45,14 +48,28 @@ return {
     keys = {
       { "<leader>P", "<cmd>Telescope command_palette<CR>", desc = "Command palette" },
     },
-    config = function()
-      require("telescope").load_extension("command_palette")
-    end
+    config = function() require("telescope").load_extension "command_palette" end,
+  },
+  {
+    "rcarriga/nvim-notify",
+    init = function() require("astronvim.utils").load_plugin_with_func("nvim-notify", vim, "notify") end,
+    opts = {
+      background_colour = "#000000",
+      on_open = function(win) vim.api.nvim_win_set_config(win, { zindex = 1000 }) end,
+    },
+    config = function(_, opts)
+      local notify = require "notify"
+      notify.setup(opts)
+      vim.notify = notify
+    end,
   },
   {
     "folke/noice.nvim",
     lazy = false,
-    dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
     opts = {
       lsp = {
         progress = { enabled = false },
@@ -79,21 +96,19 @@ return {
       },
       presets = {
         -- bottom_search = false,     -- use a classic bottom cmdline for search
-        command_palette = true,       -- position the cmdline and popupmenu together
+        command_palette = true, -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = true,            -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = true,        -- add a border to hover docs and signature help
+        inc_rename = true, -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = true, -- add a border to hover docs and signature help
       },
     },
   },
   {
     "nvim-telescope/telescope.nvim",
     config = function(plugin, opts)
-      if not opts.extensions then
-        opts.extensions = {}
-      end
+      if not opts.extensions then opts.extensions = {} end
       opts.extensions.command_palette = astronvim.user_opts("command_palette", {})
-      require("plugins.configs.telescope")(plugin, opts)
+      require "plugins.configs.telescope"(plugin, opts)
     end,
   },
 }
