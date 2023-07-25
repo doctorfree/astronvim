@@ -15,7 +15,8 @@ return {
   },
   {
     "j-hui/fidget.nvim",
-    lazy = false,
+    tag = "legacy",
+    event = "LspAttach",
     config = function() require("fidget").setup {} end,
   },
   {
