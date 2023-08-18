@@ -2,6 +2,8 @@
 
 User configuration for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
+Visit the [AstroNvim User Customization website](https://astronvim.lazyman.dev)
+
 <a href="https://dotfyle.com/doctorfree/astronvim"><img src="https://dotfyle.com/doctorfree/astronvim/badges/plugins?style=flat" /></a>
 <a href="https://dotfyle.com/doctorfree/astronvim"><img src="https://dotfyle.com/doctorfree/astronvim/badges/leaderkey?style=flat" /></a>
 <a href="https://dotfyle.com/doctorfree/astronvim"><img src="https://dotfyle.com/doctorfree/astronvim/badges/plugin-manager?style=flat" /></a>
