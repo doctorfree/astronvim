@@ -13,7 +13,7 @@ Visit the [AstroNvim User Customization website](https://astronvim.lazyman.dev)
 Installation and initialization using `lazyman`:
 
 ```bash
-git clone https://github.com:doctorfree/nvim-lazyman ~/.config/nvim-Lazyman
+git clone https://github.com/doctorfree/nvim-lazyman ~/.config/nvim-Lazyman
 ~/.config/nvim-Lazyman/lazyman.sh
 lazyman -a
 ```
